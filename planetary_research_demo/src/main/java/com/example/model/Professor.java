@@ -16,7 +16,7 @@ public class Professor {
     private String registroFaculdade;
     private String nomeFaculdade;
     private String formacao;
-    private int idade;
+    private String idade;
     private String senha;
     private String linkedinGithub;
     private String areaDeEstudo;
@@ -24,7 +24,7 @@ public class Professor {
 
     // Construtor
     public Professor(String nome, String email, String telefone, String registroFaculdade, String nomeFaculdade,
-            String formacao, int idade, String senha, String linkedinGithub, String areaDeEstudo) {
+            String formacao, String idade, String senha, String linkedinGithub, String areaDeEstudo) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;

@@ -45,7 +45,7 @@ public class ProfessorDAO {
                     result.getString("registroFaculdade"),
                     result.getString("nomeFaculdade"),
                     result.getString("formacao"),
-                    result.getInteger("idade"),
+                    result.getString("idade"),
                     result.getString("senha"),
                     result.getString("linkedinGithub"),
                     result.getString("areaDeEstudo"));

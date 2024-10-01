@@ -6,15 +6,18 @@ import java.awt.event.ActionListener;
 
 public class MainView {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Cadastro de Professores e Alunos");
-        JButton professorButton = new JButton("Professor");
-        JButton alunoButton = new JButton("Aluno");
+        JFrame frame = new JFrame("Cadastro e Login de Professores e Alunos");
+        JButton professorButton = new JButton("Cadastro Professor");
+        JButton alunoButton = new JButton("Cadastro Aluno");
+        JButton loginButton = new JButton("Login");
 
         professorButton.setBounds(100, 100, 200, 40);
         alunoButton.setBounds(100, 150, 200, 40);
+        loginButton.setBounds(100, 200, 200, 40);
 
         frame.add(professorButton);
         frame.add(alunoButton);
+        frame.add(loginButton);
 
         frame.setSize(400, 400);
         frame.setLayout(null);
@@ -32,6 +35,11 @@ public class MainView {
                 new CadastroAlunoView();
             }
         });
+
+        loginButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new LoginView();
+            }
+        });
     }
 }
-
