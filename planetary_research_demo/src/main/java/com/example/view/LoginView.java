@@ -17,7 +17,7 @@ public class LoginView extends JFrame {
     public LoginView() {
         setTitle("Login");
         setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(null);
 
         JLabel emailLabel = new JLabel("Email:");
@@ -46,7 +46,9 @@ public class LoginView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 LoginController controller = new LoginController();
-                Professor professor = controller.loginProfessor(emailField.getText(), new String(senhaField.getPassword()));
+                String emailProfessor = emailField.getText();
+                String senhaProfessor = new String(senhaField.getPassword());
+                Professor professor = controller.loginProfessor(emailProfessor, senhaProfessor);
 
                 if (professor != null) {
                     JOptionPane.showMessageDialog(null, "Login bem-sucedido! Bem-vindo Professor " + professor.getNome());
@@ -61,7 +63,9 @@ public class LoginView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 LoginController controller = new LoginController();
-                Aluno aluno = controller.loginAluno(emailField.getText(), new String(senhaField.getPassword()));
+                String emailAluno = emailField.getText();
+                String senhaAluno = new String (senhaField.getPassword());
+                Aluno aluno = controller.loginAluno(emailAluno, senhaAluno);
 
                 if (aluno != null) {
                     JOptionPane.showMessageDialog(null, "Login bem-sucedido! Bem-vindo Aluno " + aluno.getNome());

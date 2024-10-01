@@ -1,4 +1,4 @@
-package com.example.view;
+package com.example.view.aluno;
 
 import javax.swing.*;
 

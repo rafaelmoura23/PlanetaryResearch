@@ -1,6 +1,10 @@
 package com.example.view;
 
 import javax.swing.*;
+
+import com.example.view.aluno.CadastroAlunoView;
+import com.example.view.professor.CadastroProfessorView;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
