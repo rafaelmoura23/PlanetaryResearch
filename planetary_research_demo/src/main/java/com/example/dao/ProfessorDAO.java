@@ -2,7 +2,6 @@ package com.example.dao;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.example.ConnectionFactory;
 import com.example.model.Professor;
 import org.bson.Document;
 import static com.mongodb.client.model.Filters.eq;

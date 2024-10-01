@@ -1,6 +1,5 @@
 package com.example.dao;
 
-import com.example.ConnectionFactory;
 import com.example.model.Aluno;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
