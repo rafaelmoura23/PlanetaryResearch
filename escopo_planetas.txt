@@ -1,0 +1,114 @@
+====================== SISTEMA DE GERENCIAMENTO DE PLANETAS EM JAVA ======================
+JAVASWING, JAVAFX
+POSTGRES
+
+Usuários:
+=> Professor
+=> Aluno/Pesquisador
+
+Api:
+=> Pesquisador irá lançar as informações do planeta que ele "acha" que descobriu
+
+
+1. Página de Login:
+	- Login para Professor
+		- Nome
+		- Email
+		- Telefone
+		- Registro da Faculdade
+		- Nome da Faculdade
+		- Formação
+		- Idade
+		- Senha
+		- Linkedin ou Github
+		- Área de Estudo
+		- Alunos (Lista<>)
+
+	- Login para Aluno/Pesquisador
+		- Nome
+		- Email
+		- Telefone
+		- RA
+		- Nome da Faculdade
+		- Seha
+		- Curso
+		- Orientador
+		- Linkedin ou Github
+		- Área de Pesquisa
+		- Orientador(Aparece de acordo com os alunos cadastrados pelo Professor)
+		Por exemplo se o Aluno que estiver se cadastrando se tem o RA 12345
+		e o Professor Pedro de Araujo tem um RA 12345 cadastrado no campo Alunos
+		então aparece a opção do professor.
+
+2. Página para Professor:
+	- Vê as informações da pesquisa do aluno
+	- Cadastra Informações de Plantas já existentes:
+		- Nome do Planeta (nome a ser dado) (String)
+		- Distância da Terra (Anos luz)
+		- Foto (String)
+		- Diâmetro (double)
+		- Massa (double)
+		- Composição Atmosférica (Gases presentes na atmosfera) (List<>String)
+		- Temperatura Média (double)
+		- Número de Luas (int)
+		- Período Orbital (tempo que o planeta demora para dar uma volta em torno de sua estrela)(String)
+		- Tipo de Superficie (Rachosa, Gasosa, Líquida) (String)
+		- Atividade Geológica (String) (Atividade vulcânica ou tectonica)
+		- Possibilidade de Água (String) (Informações sobre a presença de água, e em que estado)
+		- Campo Magnético (String) (Se possui ou não e sua intensidade)
+		- Radiação (String) (nível de radiação recebido devido à proximidade com a atmosfera ou sua estrela)
+		- Gravidade (String) (Informações sobre a intensidade da gravidade)
+		- Características Especiais (Observaçõs, se tem anel, vulcões...) (String)
+	- Função para comparar as informações da pesquisa/descoberta do planeta 
+	do Aluno com as informações do planeta real e gerar um relatório com o resultado
+	de ser ou não um planeta real.
+
+	OBS: (features for future)
+	- Implementar uma IA que compara as informações do planeta do aluno
+	e gera um relatório sobre a proximidade ou não entre o planeta "descoberto" e o planeta real, 
+	ou seja, dar o veridito o aluno descobriu ou não um novo planeta.
+	- Adicionar função para verificar se o planeta é habitável para humanos.
+	- Professor disponibiliza o relatório para o Aluno que realizou a pesquisa
+
+3. Página para Aluno/Pesquisador:
+	- Tela para cadastro de um novo Planeta:
+		- Nome do Planeta (nome a ser dado) (String)
+		- Distância da Terra (Anos luz)
+		- Foto (String)
+		- Diâmetro (double)
+		- Massa (double)
+		- Composição Atmosférica (Gases presentes na atmosfera) (List<>String)
+		- Temperatura Média (double)
+		- Número de Luas (int)
+		- Período Orbital (tempo que o planeta demora para dar uma volta em torno de sua estrela)(String)
+		- Tipo de Superficie (Rachosa, Gasosa, Líquida) (String)
+		- Atividade Geológica (String) (Atividade vulcânica ou tectonica)
+		- Possibilidade de Água (String) (Informações sobre a presença de água, e em que estado)
+		- Campo Magnético (String) (Se possui ou não e sua intensidade)
+		- Radiação (String) (nível de radiação recebido devido à proximidade com a atmosfera ou sua estrela)
+		- Gravidade (String) (Informações sobre a intensidade da gravidade)
+		- Características Especiais (Observaçõs, se tem anel, vulcões...) (String)
+		
+	- Irá inserir as informações do planeta dele na API(CRUD)
+		- Criar um Planeta
+		- Ver um Planeta que ele criou
+		- Atualizar informações de algum planeta
+		- Deletar um planeta criado
+
+
+
+=============== DIAGRAMA DE USO ==============
+1. Página Inicial
+	- Botão (Professor)
+	- Botão (Aluno/Pesquisador)
+2. Página de Cadastro
+	- Preenchimento de Informações e cadastro => to login().
+3. Página de Login
+	- Validação de email/ra e senha => to internPage().
+4. Página Interna do Aluno
+	- 4.1 Pesquisas/Planetas em andamento (CARDS)
+	- 4.2 Cadastro de Planetas (API)
+5. Página Interna do Professor
+	- 5.1 Cadastrar as informações do Planeta Real ou pegar de API
+	- 5.2 Página que irá gerar o relatório se o planeta do Aluno é Real ou não
+6. Logout(Ambos)
