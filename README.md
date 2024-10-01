@@ -1,6 +1,6 @@
-# AstroDiscovery 🌌
+# PlanetaryResearch 🌌
 
-**AstroDiscovery** é uma aplicação educacional interativa desenvolvida em **Java** (utilizando **JavaFX** ou **Swing**) com um banco de dados **PostgreSQL**. O sistema visa facilitar a pesquisa e o estudo de planetas por **professores** e **alunos/pesquisadores**, promovendo um ambiente acadêmico para o lançamento e validação de informações planetárias.
+**PlanetaryResearch** é uma aplicação educacional interativa desenvolvida em **Java** (utilizando **Swing**) com um banco de dados **MongoDB**. O sistema visa facilitar a pesquisa e o estudo de planetas por **professores** e **alunos/pesquisadores**, promovendo um ambiente acadêmico para o lançamento e validação de informações planetárias.
 
 ## Funcionalidades Principais
 
@@ -43,7 +43,7 @@ O sistema oferece login e cadastro diferenciados para **Professores** e **Alunos
 
 ## Tecnologias Utilizadas
 - **Java (JavaFX ou Swing)**
-- **PostgreSQL** para gerenciamento de banco de dados
+- **MongoDB** para gerenciamento de banco de dados
 - **APIs** para comunicação entre alunos e professores
 
 ## Futuras Expansões
@@ -52,5 +52,5 @@ O sistema oferece login e cadastro diferenciados para **Professores** e **Alunos
 
 ---
 
-**AstroDiscovery** traz a exploração espacial para a sala de aula, promovendo uma experiência de aprendizado prática e interativa, onde alunos e professores podem colaborar e validar descobertas científicas.
+**PlanetaryResearch** traz a exploração espacial para a sala de aula, promovendo uma experiência de aprendizado prática e interativa, onde alunos e professores podem colaborar e validar descobertas científicas.
 
