@@ -5,6 +5,8 @@ import javax.swing.*;
 import com.example.controller.LoginController;
 import com.example.model.Aluno;
 import com.example.model.Professor;
+import com.example.view.aluno.PaginaInternaAluno;
+import com.example.view.professor.PaginaInternaProfessor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,6 +55,8 @@ public class LoginView extends JFrame {
                 if (professor != null) {
                     JOptionPane.showMessageDialog(null, "Login bem-sucedido! Bem-vindo Professor " + professor.getNome());
                     // Redirecionar para a tela de professor
+                    new PaginaInternaProfessor(professor);
+                    dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Email ou senha incorretos!");
                 }
@@ -70,6 +74,8 @@ public class LoginView extends JFrame {
                 if (aluno != null) {
                     JOptionPane.showMessageDialog(null, "Login bem-sucedido! Bem-vindo Aluno " + aluno.getNome());
                     // Redirecionar para a tela de aluno
+                    new PaginaInternaAluno(aluno);
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Email ou senha incorretos!");
                 }

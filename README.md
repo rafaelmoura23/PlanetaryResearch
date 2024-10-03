@@ -54,3 +54,37 @@ O sistema oferece login e cadastro diferenciados para **Professores** e **Alunos
 
 **PlanetaryResearch** traz a exploração espacial para a sala de aula, promovendo uma experiência de aprendizado prática e interativa, onde alunos e professores podem colaborar e validar descobertas científicas.
 
+``` mermaid
+
+classDiagram
+    class Professor {
+        +String nome
+        +String email
+        +String telefone
+        +String registroFaculdade
+        +String nomeFaculdade
+        +String formacao
+        +int idade
+        +String senha
+        +String linkedinOuGithub
+        +String areaEstudo
+        +List~Aluno~ alunos
+    }
+
+    class Aluno {
+        +String nome
+        +String email
+        +String telefone
+        +String ra
+        +String nomeFaculdade
+        +String senha
+        +String curso
+        +Professor orientador
+        +String linkedinOuGithub
+        +String areaPesquisa
+    }
+
+    Professor "1" --> "0..*" Aluno : tem
+    
+    Aluno --> Professor : orientadoPor
+```

@@ -6,6 +6,8 @@ import com.example.model.Professor;
 import org.bson.Document;
 import static com.mongodb.client.model.Filters.eq;
 
+import java.util.List;
+
 public class ProfessorDAO {
 
     private MongoDatabase database;
@@ -37,6 +39,7 @@ public class ProfessorDAO {
         Document result = collection.find(eq("email", email)).first();
 
         if (result != null && result.getString("senha").equals(senha)) {
+            List<String> alunos = result.getList("alunos", String.class);
             return new Professor(
                     result.getString("nome"),
                     result.getString("email"),
@@ -47,7 +50,9 @@ public class ProfessorDAO {
                     result.getString("idade"),
                     result.getString("senha"),
                     result.getString("linkedinGithub"),
-                    result.getString("areaDeEstudo"));
+                    result.getString("areaDeEstudo"),
+                    alunos
+                    );
         }
         return null;
     }

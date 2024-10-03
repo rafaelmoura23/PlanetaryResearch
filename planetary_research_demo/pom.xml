@@ -13,8 +13,6 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-
-
     <dependencies>
 
         <dependency>
@@ -30,13 +28,5 @@
             <artifactId>lombok</artifactId>
             <version>1.18.34</version>
         </dependency>
-    
-
-        <!-- <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>5.2.0</version>
-        </dependency> -->
-
     </dependencies>
 </project>
