@@ -9,7 +9,7 @@ import com.example.model.Aluno;
 import com.example.model.PesquisaAluno;
 
 public class PaginaCadastroPesquisaAluno extends JFrame {
-    public PaginaCadastroPesquisaAluno(Aluno aluno, String tipoUsuario) {
+    public PaginaCadastroPesquisaAluno(Aluno aluno) {
         setTitle("Sistema de Gerenciamento de Pesquisas");
         setSize(800, 800);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -23,7 +23,7 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
         tipoLabel.setBounds(50, 700, 200, 30);
         add(tipoLabel);
 
-        JTextField tipoField = new JTextField(tipoUsuario); // Define o valor dinamicamente
+        JTextField tipoField = new JTextField("Usuario"); // Define o valor dinamicamente
         tipoField.setBounds(250, 700, 400, 30);
         tipoField.setEditable(false); // Desabilita a edição
         add(tipoField);
