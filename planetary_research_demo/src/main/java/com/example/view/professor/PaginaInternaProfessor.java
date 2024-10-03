@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import com.example.model.Professor;
-import com.example.view.pesquisa.PaginaCadastroPesquisaAluno;
+import com.example.view.pesquisa.PaginaCadastroPesquisaPadrao;
 
 public class PaginaInternaProfessor extends JFrame {
     public PaginaInternaProfessor(Professor professor) {
@@ -30,7 +30,7 @@ public class PaginaInternaProfessor extends JFrame {
        // botao para ir para cadastro de planetas
        planetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new PaginaCadastroPesquisaAluno(professor);
+                new PaginaCadastroPesquisaPadrao(professor);
             }
         });
 

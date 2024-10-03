@@ -17,7 +17,7 @@ public class PesquisaAluno {
     private String foto; // Foto (String)
     private double diametro; // Diâmetro (double)
     private double massa; // Massa (double)
-    private List<String> composicaoAtmosferica; // Composição Atmosférica (Gases presentes na atmosfera)
+    private String composicaoAtmosferica; // Composição Atmosférica (Gases presentes na atmosfera)
     private double temperaturaMedia; // Temperatura Média (double)
     private int numeroDeLuas; // Número de Luas (int)
     private String periodoOrbital; // Período Orbital (String)
@@ -28,4 +28,5 @@ public class PesquisaAluno {
     private String radiacao; // Radiação (String)
     private String gravidade; // Gravidade (String)
     private String caracteristicasEspeciais;
+    private String tipo; // 1 para aluno, 2 para professor
 }
