@@ -11,7 +11,6 @@ import lombok.Getter;
 public class LoginController {
     private ProfessorDAO professorDAO;
     private AlunoDAO alunoDAO;
-    private String tipoUsuario;
 
     public LoginController() {
         this.professorDAO = new ProfessorDAO();
@@ -20,17 +19,11 @@ public class LoginController {
 
     public Professor loginProfessor(String email, String senha) {
         Professor professor = professorDAO.buscarProfessorPorEmailESenha(email, senha);
-        if (professor != null) {
-            tipoUsuario = "professor"; 
-        }
         return professor;
     }
 
     public Aluno loginAluno(String email, String senha) {
         Aluno aluno = alunoDAO.buscarAlunoPorEmailESenha(email, senha);
-        if (aluno != null) {
-            tipoUsuario = "aluno";
-        }
         return aluno;
     }
 }

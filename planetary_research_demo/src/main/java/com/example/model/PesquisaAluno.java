@@ -1,6 +1,5 @@
 package com.example.model;
 
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,5 +27,6 @@ public class PesquisaAluno {
     private String radiacao; // Radiação (String)
     private String gravidade; // Gravidade (String)
     private String caracteristicasEspeciais;
-    private String tipo; // 1 para aluno, 2 para professor
+    private String tipo; // aluno ou professor
+    private String idAluno;
 }

@@ -4,8 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
 import com.example.model.Professor;
-import com.example.view.pesquisa.PaginaCadastroPesquisaPadrao;
+import com.example.view.pesquisa.PaginaCadastroPesquisaAluno;
 
 public class PaginaInternaProfessor extends JFrame {
     public PaginaInternaProfessor(Professor professor) {
@@ -14,7 +15,8 @@ public class PaginaInternaProfessor extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
-        JLabel welcomeLabel = new JLabel("Bem-vindo, Professor " + professor.getNome());
+
+        JLabel welcomeLabel = new JLabel("Bem-vindo, Professor " + professor.getNome() + "\n Tipo de Usuário: " + professor.getTipoUsuario());
         welcomeLabel.setBounds(50, 50, 300, 30);
         add(welcomeLabel);
 
@@ -30,7 +32,7 @@ public class PaginaInternaProfessor extends JFrame {
        // botao para ir para cadastro de planetas
        planetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new PaginaCadastroPesquisaPadrao(professor);
+                 new PaginaCadastroPesquisaAluno(null, professor);
             }
         });
 

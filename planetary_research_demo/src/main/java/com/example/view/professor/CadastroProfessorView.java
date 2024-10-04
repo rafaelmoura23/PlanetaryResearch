@@ -155,6 +155,7 @@ public class CadastroProfessorView {
                 String senha = new String(senhaField.getPassword());
                 String linkedinOuGithub = linkedinField.getText();
                 String areaEstudo = areaEstudoField.getText();
+                String tipoUsuario = "professor";
 
                 // Obtém a lista de RAs
                 List<String> alunos = new ArrayList<>();
@@ -165,7 +166,7 @@ public class CadastroProfessorView {
                 // Cria o novo professor
                 Professor novoProfessor = new Professor(nome, email, telefone, registroFaculdade,
                         nomeFaculdade, formacao, idade, senha,
-                        linkedinOuGithub, areaEstudo, alunos);
+                        linkedinOuGithub, areaEstudo, alunos, tipoUsuario);
 
                 // Cadastra o professor no DAO
                 ProfessorDAO professorDAO = new ProfessorDAO();

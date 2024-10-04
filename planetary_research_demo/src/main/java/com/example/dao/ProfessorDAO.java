@@ -30,7 +30,8 @@ public class ProfessorDAO {
                 .append("senha", professor.getSenha())
                 .append("linkedinGithub", professor.getLinkedinGithub())
                 .append("areaDeEstudo", professor.getAreaDeEstudo())
-                .append("alunos", professor.getAlunos());
+                .append("alunos", professor.getAlunos())
+                .append("tipoUsuario", professor.getTipoUsuario());
         collection.insertOne(doc);
     }
 
@@ -51,7 +52,8 @@ public class ProfessorDAO {
                     result.getString("senha"),
                     result.getString("linkedinGithub"),
                     result.getString("areaDeEstudo"),
-                    alunos
+                    alunos,
+                    result.getString("tipoUsuario")
                     );
         }
         return null;

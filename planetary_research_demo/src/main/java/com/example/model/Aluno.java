@@ -17,4 +17,5 @@ public class Aluno {
     private String orientador;
     private String linkedinGithub;
     private String areaDePesquisa;
+    private String tipoUsuario;
 }

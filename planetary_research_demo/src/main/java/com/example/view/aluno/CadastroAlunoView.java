@@ -116,10 +116,11 @@ public class CadastroAlunoView {
                 String orientador = orientadorField.getText();
                 String linkedinGithub = linkedinField.getText();
                 String areaPesquisa = areaPesquisaField.getText();
+                String tipoUsuario = "aluno";
 
 
                 AlunoDAO alunoDAO = new AlunoDAO();
-                alunoDAO.cadastrarAluno(new Aluno(nome, email, telefone, ra, nomeFaculdade, senha, curso, orientador, linkedinGithub, areaPesquisa));
+                alunoDAO.cadastrarAluno(new Aluno(nome, email, telefone, ra, nomeFaculdade, senha, curso, orientador, linkedinGithub, areaPesquisa, tipoUsuario));
                 JOptionPane.showMessageDialog(frame, "Aluno cadastrado com sucesso!");
                 frame.dispose(); // Fecha a janela após o cadastro
             }

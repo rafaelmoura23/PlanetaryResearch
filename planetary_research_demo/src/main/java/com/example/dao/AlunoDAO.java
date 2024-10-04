@@ -28,7 +28,8 @@ public class AlunoDAO {
                 .append("curso", aluno.getCurso())
                 .append("orientador", aluno.getOrientador())
                 .append("linkedinGithub", aluno.getLinkedinGithub())
-                .append("areaDePesquisa", aluno.getAreaDePesquisa());
+                .append("areaDePesquisa", aluno.getAreaDePesquisa())
+                .append("tipoUsuario", aluno.getTipoUsuario());
         collection.insertOne(doc);
     }
 
@@ -47,7 +48,8 @@ public class AlunoDAO {
                 result.getString("curso"),
                 result.getString("orientador"),
                 result.getString("linkedinGithub"),
-                result.getString("areaDePesquisa")
+                result.getString("areaDePesquisa"),
+                result.getString("tipoUsuario")
             );
         }
         return null;

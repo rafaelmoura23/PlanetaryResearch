@@ -7,29 +7,33 @@ import java.awt.event.ActionListener;
 import com.example.dao.PesquisaAlunoDAO;
 import com.example.model.Aluno;
 import com.example.model.PesquisaAluno;
+import com.example.model.Professor;
 
 public class PaginaCadastroPesquisaAluno extends JFrame {
-    public PaginaCadastroPesquisaAluno(Aluno aluno) {
+    public PaginaCadastroPesquisaAluno(Aluno aluno, Professor professor) {
         setTitle("Sistema de Gerenciamento de Pesquisas");
         setSize(800, 800);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(null);
 
-        JLabel welcomeLabel = new JLabel("Bem-vindo, Aluno " + aluno.getNome());
+        // Verifica se aluno ou professor estão disponíveis
+        String tipoUsuario;
+        String nomeUsuario;
+
+        if (aluno != null) {
+            tipoUsuario = aluno.getTipoUsuario();
+            nomeUsuario = aluno.getNome();
+        } else if (professor != null) {
+            tipoUsuario = professor.getTipoUsuario();
+            nomeUsuario = professor.getNome();
+        } else {
+            tipoUsuario = "desconhecido";
+            nomeUsuario = "usuário";
+        }
+
+        JLabel welcomeLabel = new JLabel("Bem-vindo, " + tipoUsuario + " " + nomeUsuario);
         welcomeLabel.setBounds(50, 20, 300, 30);
         add(welcomeLabel);
-
-        JLabel tipoLabel = new JLabel("Tipo:");
-        tipoLabel.setBounds(50, 700, 200, 30);
-        add(tipoLabel);
-
-        JTextField tipoField = new JTextField("Usuario"); // Define o valor dinamicamente
-        tipoField.setBounds(250, 700, 400, 30);
-        tipoField.setEditable(false); // Desabilita a edição
-        add(tipoField);
-
-
-        // No seu ActionListener do botão salvar
 
         // Campos para cadastro de planeta
         JLabel nomePlanetaLabel = new JLabel("Nome do Planeta:");
@@ -144,6 +148,15 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
         caracteristicasField.setBounds(250, 660, 400, 30);
         add(caracteristicasField);
 
+        JLabel idAlunoLabel = new JLabel("ID Aluno:");
+        idAlunoLabel.setBounds(50, 690, 200, 30);
+        add(idAlunoLabel);
+        String idAluno = aluno.getRa();
+        JTextField idAlunoField = new JTextField(idAluno);
+        idAlunoField.setBounds(250, 690, 400, 30);
+        add(idAlunoField);
+        idAlunoField.setEditable(false);
+
         // Botão para salvar a pesquisa
         JButton salvarButton = new JButton("Salvar Pesquisa");
         salvarButton.setBounds(300, 700, 200, 40);
@@ -152,9 +165,6 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
         salvarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Aqui você pode adicionar a lógica para salvar os dados da pesquisa
-                // JOptionPane.showMessageDialog(null, "Pesquisa salva com sucesso!");
-
                 // Captura dos dados dos campos
                 String nomePlaneta = nomePlanetaField.getText();
                 String distanciaString = distanciaField.getText(); // double
@@ -177,13 +187,13 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
                 String radiacao = radiacaoField.getText();
                 String gravidade = gravidadeField.getText();
                 String caracteristicas = caracteristicasField.getText();
-                String tipo = tipoField.getText();
+                String idAluno = aluno.getRa();
 
                 PesquisaAluno pesquisaAluno = new PesquisaAluno(
                         nomePlaneta, distancia, foto, diametro, massa, composicao,
                         temperatura, numeroLuas, periodoOrbital, tipoSuperficie,
                         atividadeGeologica, possibilidadeAgua, campoMagnetico,
-                        radiacao, gravidade, caracteristicas, tipo);
+                        radiacao, gravidade, caracteristicas, tipoUsuario, idAluno);
                 PesquisaAlunoDAO pesquisaAlunoDAO = new PesquisaAlunoDAO();
                 pesquisaAlunoDAO.inserirPlaneta(pesquisaAluno);
                 JOptionPane.showMessageDialog(null, "Pesquisa/Planeta cadastrada com sucesso!");

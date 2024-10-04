@@ -17,7 +17,7 @@ public class PaginaInternaAluno extends JFrame{
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(null);
 
-        JLabel welcomeLabel = new JLabel("Bem-vindo, Aluno " + aluno.getNome());
+        JLabel welcomeLabel = new JLabel("Bem-vindo, Aluno " + aluno.getNome() + "Tipo de Usuário: " + aluno.getTipoUsuario());
         welcomeLabel.setBounds(50, 50, 300, 30);
         add(welcomeLabel);
 
@@ -30,7 +30,7 @@ public class PaginaInternaAluno extends JFrame{
         // Botao para ir para cadastro de pesquisa
          planetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new PaginaCadastroPesquisaAluno(aluno);
+                new PaginaCadastroPesquisaAluno(aluno, null);
             }
         });
 
