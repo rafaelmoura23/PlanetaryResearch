@@ -1,14 +1,14 @@
 package com.example.dao;
 
-import com.example.model.Aluno;
 import com.example.model.PesquisaAluno;
 import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.bson.Document;
 
@@ -72,5 +72,38 @@ public class PesquisaAlunoDAO {
     public void deletarPesquisaPorNomePlaneta(String nomePlaneta) {
         MongoCollection<Document> collection = database.getCollection("pesquisaAlunos");
         collection.deleteOne(Filters.eq("nomePlaneta", nomePlaneta));
+    }
+
+    // Método para buscar pesquisas do aluno logado pelo RA
+    public List<PesquisaAluno> buscarPesquisasPorRA(String ra) {
+        MongoCollection<Document> collection = database.getCollection("pesquisaAlunos");
+        FindIterable<Document> documentos = collection.find(Filters.eq("idAluno", ra));
+        List<PesquisaAluno> pesquisas = new ArrayList<>();
+
+        for (Document doc : documentos) {
+            PesquisaAluno pesquisa = new PesquisaAluno();
+            pesquisa.setNomePlaneta(doc.getString("nomePlaneta"));
+            pesquisa.setDistanciaDaTerra(doc.getDouble("distanciaDaTerra"));
+            pesquisa.setFoto(doc.getString("foto"));
+            pesquisa.setDiametro(doc.getDouble("diametro"));
+            pesquisa.setMassa(doc.getDouble("massa"));
+            pesquisa.setComposicaoAtmosferica(doc.getString("composicaoAtmosferica"));
+            pesquisa.setTemperaturaMedia(doc.getDouble("temperaturaMedia"));
+            pesquisa.setNumeroDeLuas(doc.getInteger("numeroDeLuas"));
+            // pesquisa.setPeriodoOrbital(doc.getDouble("periodoOrbital"));
+            pesquisa.setTipoDeSuperficie(doc.getString("tipoDeSuperficie"));
+            pesquisa.setAtividadeGeologica(doc.getString("atividadeGeologica"));
+            pesquisa.setPossibilidadeDeAgua(doc.getString("possibilidadeDeAgua"));
+            pesquisa.setCampoMagnetico(doc.getString("campoMagnetico"));
+            pesquisa.setRadiacao(doc.getString("radiacao"));
+            // pesquisa.setGravidade(doc.getDouble("gravidade"));
+            pesquisa.setCaracteristicasEspeciais(doc.getString("caracteristicasEspeciais"));
+            pesquisa.setTipo(doc.getString("tipo"));
+            pesquisa.setIdAluno(doc.getString("idAluno"));
+
+            pesquisas.add(pesquisa);
+        }
+
+        return pesquisas;
     }
 }

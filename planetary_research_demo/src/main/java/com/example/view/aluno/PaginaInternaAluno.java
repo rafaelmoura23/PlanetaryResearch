@@ -1,40 +1,62 @@
 package com.example.view.aluno;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
+import com.example.dao.PesquisaAlunoDAO;
 import com.example.model.Aluno;
+import com.example.model.PesquisaAluno;
 import com.example.view.pesquisa.PaginaCadastroPesquisaAluno;
 
-public class PaginaInternaAluno extends JFrame{
+public class PaginaInternaAluno extends JFrame {
+    private Aluno aluno;
+
     public PaginaInternaAluno(Aluno aluno) {
+        this.aluno = aluno; // Armazenar a referência do aluno
         setTitle("Página Interna do Aluno");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setLayout(null);
+        setLayout(new BorderLayout());
 
-        JLabel welcomeLabel = new JLabel("Bem-vindo, Aluno " + aluno.getNome() + "Tipo de Usuário: " + aluno.getTipoUsuario());
-        welcomeLabel.setBounds(50, 50, 300, 30);
-        add(welcomeLabel);
+        JLabel welcomeLabel = new JLabel("Bem-vindo, Aluno " + aluno.getNome() + " Tipo de Usuário: " + aluno.getTipoUsuario());
+        welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        add(welcomeLabel, BorderLayout.NORTH);
 
-         JButton planetButton = new JButton("Cadastro de Planetas");
+        JButton planetButton = new JButton("Cadastro de Planetas");
+        add(planetButton, BorderLayout.SOUTH);
 
-         planetButton.setBounds(100, 150, 200, 40);
-
-         add(planetButton);
-
-        // Botao para ir para cadastro de pesquisa
-         planetButton.addActionListener(new ActionListener() {
+        // Botão para ir para cadastro de pesquisa
+        planetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new PaginaCadastroPesquisaAluno(aluno, null);
             }
         });
 
+        // Adicionar painel para as pesquisas
+        JPanel pesquisaPanel = new JPanel();
+        pesquisaPanel.setLayout(new FlowLayout()); // Usar FlowLayout para dispor os cards
+        add(pesquisaPanel, BorderLayout.CENTER);
+
+        // Buscar e exibir as pesquisas do aluno
+        carregarPesquisas(aluno.getRa()); // Supondo que o método getId() retorna o RA do aluno
 
         setVisible(true);
+    }
+
+    private void carregarPesquisas(String ra) {
+        PesquisaAlunoDAO pesquisaAlunoDAO = new PesquisaAlunoDAO();
+        List<PesquisaAluno> pesquisas = pesquisaAlunoDAO.buscarPesquisasPorRA(ra);
+
+        for (PesquisaAluno pesquisa : pesquisas) {
+            PesquisaCard card = new PesquisaCard(pesquisa.getNomePlaneta(), String.valueOf(pesquisa.getDistanciaDaTerra()), pesquisa.getFoto());
+            // Adicionar o card ao painel
+            ((JPanel) getContentPane().getComponent(2)).add(card); // Adicionar o card ao painel de pesquisas
+        }
+
+        revalidate(); // Atualizar o layout
+        repaint();    // Repaint para garantir que os cards apareçam
     }
 }
