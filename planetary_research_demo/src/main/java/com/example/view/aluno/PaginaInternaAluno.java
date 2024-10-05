@@ -15,7 +15,7 @@ public class PaginaInternaAluno extends JFrame {
     private Aluno aluno;
 
     public PaginaInternaAluno(Aluno aluno) {
-        this.aluno = aluno; // Armazenar a referência do aluno
+        this.aluno = aluno; 
         setTitle("Página Interna do Aluno");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -40,23 +40,21 @@ public class PaginaInternaAluno extends JFrame {
         pesquisaPanel.setLayout(new FlowLayout()); // Usar FlowLayout para dispor os cards
         add(pesquisaPanel, BorderLayout.CENTER);
 
-        // Buscar e exibir as pesquisas do aluno
-        carregarPesquisas(aluno.getRa()); // Supondo que o método getId() retorna o RA do aluno
+        carregarPesquisas(aluno.getRa(), pesquisaPanel);
 
         setVisible(true);
     }
 
-    private void carregarPesquisas(String ra) {
+    private void carregarPesquisas(String ra, JPanel pesquisaPanel) {
         PesquisaAlunoDAO pesquisaAlunoDAO = new PesquisaAlunoDAO();
         List<PesquisaAluno> pesquisas = pesquisaAlunoDAO.buscarPesquisasPorRA(ra);
 
         for (PesquisaAluno pesquisa : pesquisas) {
-            PesquisaCard card = new PesquisaCard(pesquisa.getNomePlaneta(), String.valueOf(pesquisa.getDistanciaDaTerra()), pesquisa.getFoto());
-            // Adicionar o card ao painel
-            ((JPanel) getContentPane().getComponent(2)).add(card); // Adicionar o card ao painel de pesquisas
+            PesquisaCard card = new PesquisaCard(pesquisa, aluno);
+            pesquisaPanel.add(card);
         }
 
-        revalidate(); // Atualizar o layout
-        repaint();    // Repaint para garantir que os cards apareçam
+        revalidate();
+        repaint();
     }
 }

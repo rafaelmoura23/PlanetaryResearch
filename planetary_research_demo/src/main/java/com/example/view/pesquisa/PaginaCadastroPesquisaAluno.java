@@ -188,6 +188,7 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
                 String gravidade = gravidadeField.getText();
                 String caracteristicas = caracteristicasField.getText();
                 String idAluno = aluno.getRa();
+   
 
                 PesquisaAluno pesquisaAluno = new PesquisaAluno(
                         nomePlaneta, distancia, foto, diametro, massa, composicao,
@@ -196,7 +197,6 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
                         radiacao, gravidade, caracteristicas, tipoUsuario, idAluno);
                 PesquisaAlunoDAO pesquisaAlunoDAO = new PesquisaAlunoDAO();
                 pesquisaAlunoDAO.inserirPlaneta(pesquisaAluno);
-                JOptionPane.showMessageDialog(null, "Pesquisa/Planeta cadastrada com sucesso!");
 
                 // Limpar campos após salvar
                 nomePlanetaField.setText("");

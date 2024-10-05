@@ -1,6 +1,5 @@
 package com.example.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PesquisaAluno {
+    private String id;
     private String nomePlaneta; // Nome do Planeta
     private double distanciaDaTerra; // Distância da Terra (Anos luz)
     private String foto; // Foto (String)
@@ -29,4 +29,32 @@ public class PesquisaAluno {
     private String caracteristicasEspeciais;
     private String tipo; // aluno ou professor
     private String idAluno;
+
+    public PesquisaAluno(String nomePlaneta, double distanciaDaTerra, String foto, double diametro,
+            double massa, String composicaoAtmosferica, double temperaturaMedia, int numeroDeLuas,
+            String periodoOrbital, String tipoDeSuperficie, String atividadeGeologica,
+            String possibilidadeDeAgua, String campoMagnetico, String radiacao, String gravidade,
+            String caracteristicasEspeciais, String tipo, String idAluno) {
+        this.nomePlaneta = nomePlaneta;
+        this.distanciaDaTerra = distanciaDaTerra;
+        this.foto = foto;
+        this.diametro = diametro;
+        this.massa = massa;
+        this.composicaoAtmosferica = composicaoAtmosferica;
+        this.temperaturaMedia = temperaturaMedia;
+        this.numeroDeLuas = numeroDeLuas;
+        this.periodoOrbital = periodoOrbital;
+        this.tipoDeSuperficie = tipoDeSuperficie;
+        this.atividadeGeologica = atividadeGeologica;
+        this.possibilidadeDeAgua = possibilidadeDeAgua;
+        this.campoMagnetico = campoMagnetico;
+        this.radiacao = radiacao;
+        this.gravidade = gravidade;
+        this.caracteristicasEspeciais = caracteristicasEspeciais;
+        this.tipo = tipo;
+        this.idAluno = idAluno;
+    }
+
+    
+
 }

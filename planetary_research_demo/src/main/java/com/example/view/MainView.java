@@ -2,6 +2,7 @@ package com.example.view;
 
 import javax.swing.*;
 
+// import com.example.dao.PesquisaAlunoDAO;
 import com.example.view.aluno.CadastroAlunoView;
 import com.example.view.professor.CadastroProfessorView;
 
@@ -9,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainView {
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Cadastro e Login de Professores e Alunos");
         JButton professorButton = new JButton("Cadastro Professor");
@@ -46,4 +48,5 @@ public class MainView {
             }
         });
     }
+
 }
