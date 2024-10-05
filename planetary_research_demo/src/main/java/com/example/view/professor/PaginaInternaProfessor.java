@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import com.example.model.Professor;
 import com.example.view.pesquisa.PaginaCadastroPesquisaAluno;
+import com.example.view.relatorio.PaginaValidacaoRelatorio;
 
 public class PaginaInternaProfessor extends JFrame {
     public PaginaInternaProfessor(Professor professor) {
@@ -38,6 +39,11 @@ public class PaginaInternaProfessor extends JFrame {
 
        // botao para gerar comparação/relatório se é planeta ou não
        // MÉTODO PARA GERAR UMA COMPARAÇÃO E GERAR O RELATÓRIO COM AS INFORMAÇÕES
+       relatorioButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            new PaginaValidacaoRelatorio(professor);
+        }
+       });
 
         setVisible(true);
     }

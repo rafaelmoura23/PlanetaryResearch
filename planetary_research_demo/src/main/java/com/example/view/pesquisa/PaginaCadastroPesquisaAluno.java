@@ -148,15 +148,16 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
         caracteristicasField.setBounds(250, 660, 400, 30);
         add(caracteristicasField);
 
-        JLabel idAlunoLabel = new JLabel("ID Aluno:");
-        idAlunoLabel.setBounds(50, 690, 200, 30);
-        add(idAlunoLabel);
-        String idAluno = aluno.getRa();
-        JTextField idAlunoField = new JTextField(idAluno);
-        idAlunoField.setBounds(250, 690, 400, 30);
-        add(idAlunoField);
-        idAlunoField.setEditable(false);
-
+        if (aluno != null) {
+            JLabel idAlunoLabel = new JLabel("ID Aluno:");
+            idAlunoLabel.setBounds(50, 690, 200, 30);
+            add(idAlunoLabel);
+            String idAluno = aluno.getRa();
+            JTextField idAlunoField = new JTextField(idAluno);
+            idAlunoField.setBounds(250, 690, 400, 30);
+            add(idAlunoField);
+            idAlunoField.setEditable(false);
+        }
         // Botão para salvar a pesquisa
         JButton salvarButton = new JButton("Salvar Pesquisa");
         salvarButton.setBounds(300, 700, 200, 40);
@@ -187,8 +188,11 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
                 String radiacao = radiacaoField.getText();
                 String gravidade = gravidadeField.getText();
                 String caracteristicas = caracteristicasField.getText();
-                String idAluno = aluno.getRa();
-   
+
+                String idAluno = null;
+                if (aluno != null) {
+                    idAluno = aluno.getRa();
+                }
 
                 PesquisaAluno pesquisaAluno = new PesquisaAluno(
                         nomePlaneta, distancia, foto, diametro, massa, composicao,

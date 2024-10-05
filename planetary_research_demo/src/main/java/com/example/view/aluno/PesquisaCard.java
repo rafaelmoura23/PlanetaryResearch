@@ -2,9 +2,6 @@ package com.example.view.aluno;
 
 import javax.swing.*;
 
-import org.bson.Document;
-import org.bson.types.ObjectId;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
