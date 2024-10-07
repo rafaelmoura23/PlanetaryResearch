@@ -29,16 +29,12 @@ public class AlunoController {
             throw new IllegalArgumentException("O campo nome não pode estar vazio.");
         }
 
-        if (!isEmailValido(aluno.getEmail())) {
-            throw new IllegalArgumentException("O formato do email é inválido.");
+        if (aluno.getEmail() == null || aluno.getEmail().trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo do email está vazio.");
         }
 
-        if (aluno.getSenha() == null || aluno.getSenha().trim().isEmpty()) {
-            throw new IllegalArgumentException("O campo senha não pode estar vazio.");
-        }
-
-        if (aluno.getSenha().length() < 6) {
-            throw new IllegalArgumentException("A senha deve ter pelo menos 6 caracteres.");
+        if (aluno.getSenha() == null || aluno.getSenha().length() < 6) {
+            throw new IllegalArgumentException("O campo senha não pode estar vazio e deve ter pelo menos 6 dígitos.");
         }
 
         if (aluno.getRa() == null || aluno.getRa().trim().isEmpty()) {
@@ -72,11 +68,5 @@ public class AlunoController {
         if (aluno.getLinkedinGithub() == null || aluno.getLinkedinGithub().trim().isEmpty()) {
             throw new IllegalArgumentException("O campo LinkedIn/GitHub não pode estar vazio.");
         }
-    }
-
-    // Validação do formato do email
-    private boolean isEmailValido(String email) {
-        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
-        return email != null && email.matches(emailRegex);
     }
 }

@@ -4,8 +4,6 @@ import com.example.dao.ProfessorDAO;
 import com.example.model.Professor;
 
 import javax.swing.JOptionPane;
-import java.util.regex.Pattern;
-
 public class ProfessorController {
 
     private ProfessorDAO professorDAO;
@@ -21,7 +19,7 @@ public class ProfessorController {
             return false;
         }
 
-        if (professor.getEmail() == null || !isValidEmail(professor.getEmail())) {
+        if (professor.getEmail() == null) {
             JOptionPane.showMessageDialog(null, "Email inválido.", "Erro de Validação", JOptionPane.ERROR_MESSAGE);
             return false;
         }
@@ -36,7 +34,7 @@ public class ProfessorController {
             return false;
         }
 
-        if (professor.getIdade() == null || !isValidAge(professor.getIdade())) {
+        if (professor.getIdade() == null ) {
             JOptionPane.showMessageDialog(null, "Idade inválida. Deve ser um número positivo.", "Erro de Validação", JOptionPane.ERROR_MESSAGE);
             return false;
         }
@@ -55,22 +53,5 @@ public class ProfessorController {
         professorDAO.cadastrarProfessor(professor);
         JOptionPane.showMessageDialog(null, "Professor cadastrado com Sucesso!");
         return true;
-    }
-
-    // Método para validar o formato do email
-    private boolean isValidEmail(String email) {
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
-        Pattern pattern = Pattern.compile(emailRegex);
-        return pattern.matcher(email).matches();
-    }
-
-    // Método para validar a idade (deve ser um número e positivo)
-    private boolean isValidAge(String idadeStr) {
-        try {
-            int idade = Integer.parseInt(idadeStr);
-            return idade > 0;
-        } catch (NumberFormatException e) {
-            return false;
-        }
     }
 }

@@ -21,5 +21,4 @@ public class Professor {
     private String areaDeEstudo;
     private List<String> alunos; // Lista de RAs dos alunos
     private String tipoUsuario;
-
 }

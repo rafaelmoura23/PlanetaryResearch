@@ -201,8 +201,6 @@ public List<PesquisaAluno> listarPlanetasPorProfessor(Professor professor) {
 
     return planetas;
 }
-
-    // Método auxiliar para extrair PesquisaAluno de um Document
     private PesquisaAluno extrairPesquisaAluno(Document doc) {
         PesquisaAluno pesquisa = new PesquisaAluno();
         pesquisa.setId(doc.getObjectId("_id").toHexString());

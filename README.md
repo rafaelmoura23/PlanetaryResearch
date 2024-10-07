@@ -57,20 +57,6 @@ O sistema oferece login e cadastro diferenciados para **Professores** e **Alunos
 ``` mermaid
 
 classDiagram
-    class Professor {
-        +String nome
-        +String email
-        +String telefone
-        +String registroFaculdade
-        +String nomeFaculdade
-        +String formacao
-        +int idade
-        +String senha
-        +String linkedinOuGithub
-        +String areaEstudo
-        +List~Aluno~ alunos
-    }
-
     class Aluno {
         +String nome
         +String email
@@ -79,12 +65,68 @@ classDiagram
         +String nomeFaculdade
         +String senha
         +String curso
-        +Professor orientador
-        +String linkedinOuGithub
-        +String areaPesquisa
+        +String orientador
+        +String linkedinGithub
+        +String areaDePesquisa
+        +String tipoUsuario
+        +cadastrar()
+        +login()
+        +cadastrarPlanetas()
+        +verPlaneta()
+        +atualizarPlaneta()
+        +deletarPlaneta()
     }
 
-    Professor "1" --> "0..*" Aluno : tem
-    
-    Aluno --> Professor : orientadoPor
+    class Professor {
+        +String nome
+        +String email
+        +String telefone
+        +String registroFaculdade
+        +String nomeFaculdade
+        +String formacao
+        +String idade
+        +String senha
+        +String linkedinGithub
+        +String areaDeEstudo
+        +List<String> alunos
+        +String tipoUsuario
+        +cadastrar()
+        +fazerLogin()
+        +cadastrarPlaneta()
+        +gerarRelatorio()
+    }
+
+    class Planeta {
+        +String id
+        +String nomePlaneta
+        +double distanciaDaTerra
+        +String foto
+        +double diametro
+        +double massa
+        +String composicaoAtmosferica
+        +double temperaturaMedia
+        +int numeroDeLuas
+        +String periodoOrbital
+        +String tipoDeSuperficie
+        +String atividadeGeologica
+        +String possibilidadeDeAgua
+        +String campoMagnetico
+        +String radiacao
+        +String gravidade
+        +String caracteristicasEspeciais
+        +String tipo
+        +String idAluno
+        +listarPesquisasAll()
+        +listarPesquisasAluno()
+        +listarPlanetaProfessor()
+    }
+
+    %% Relationships
+    Aluno "1" --> "0..*" Planeta : cadastra >
+    Professor "1" --> "0..*" Planeta : cadastra >
+    Professor "1" --> "0..*" Aluno : mentor >
+    Aluno "1" --> "0..1" Professor : tem mentor >
+    Planeta "1" --> "0..1" Aluno : associado a >
+    Planeta "1" --> "0..1" Professor : associado a >
+
 ```
