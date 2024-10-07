@@ -1,0 +1,39 @@
+Relatório de Comparação de Planetas
+
+Planeta do Aluno: TesteeeeeToday
+Planeta Real: 10
+
+Distância da Terra:
+ - Aluno: 12.0
+ - Real: 10.0
+ - Similaridade: 83,33%
+
+Diâmetro:
+ - Aluno: 12.0
+ - Real: 10.0
+ - Similaridade: 83,33%
+
+Massa:
+ - Aluno: 12.0
+ - Real: 1010.0
+ - Similaridade: 1,19%
+
+Temperatura Média:
+ - Aluno: 76.0
+ - Real: 10.0
+ - Similaridade: 13,16%
+
+Número de Luas:
+ - Aluno: 18.0
+ - Real: 10.0
+ - Similaridade: 55,56%
+
+Gravidade:
+ - Aluno: 10.0
+ - Real: 10.0
+ - Similaridade: 100,00%
+
+
+Nível de Proximidade Geral: 56,09%
+
+Feedback: O planeta do aluno possui diferenças significativas em relação a um planeta real.

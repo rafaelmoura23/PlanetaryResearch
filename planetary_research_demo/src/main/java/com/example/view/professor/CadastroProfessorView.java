@@ -3,7 +3,6 @@ package com.example.view.professor;
 import javax.swing.*;
 
 import com.example.controller.ProfessorController;
-import com.example.dao.ProfessorDAO;
 import com.example.model.Professor;
 
 import java.awt.Toolkit;
@@ -83,7 +82,7 @@ public class CadastroProfessorView {
         areaEstudoField = new JTextField();
         areaEstudoField.setBounds(150, 380, 200, 25);
 
-        // Novo campo para adicionar RA dos alunos
+        // campo para adicionar RA dos alunos
         JLabel raLabel = new JLabel("RA do Aluno:");
         raLabel.setBounds(20, 420, 150, 25);
         raField = new JTextField();
@@ -92,7 +91,7 @@ public class CadastroProfessorView {
         JButton adicionarRAButton = new JButton("Adicionar RA");
         adicionarRAButton.setBounds(150, 450, 150, 30);
 
-        // Lista para exibir os RAs adicionados
+        // Lista para exibir os RAs
         raListModel = new DefaultListModel<>();
         raList = new JList<>(raListModel);
         JScrollPane raListScrollPane = new JScrollPane(raList);
@@ -175,10 +174,9 @@ public class CadastroProfessorView {
                         nomeFaculdade, formacao, idade, senha,
                         linkedinOuGithub, areaEstudo, alunos, tipoUsuario);
 
-                // Cadastra o professor no DAO
+                // Cadastra o professor
                 ProfessorController professorController = new ProfessorController();
                 professorController.cadastrarProfessor(novoProfessor);
-                // JOptionPane.showMessageDialog(frame, "Professor cadastrado com sucesso!");
                 frame.dispose(); // Fecha a janela após o cadastro
             }
         });

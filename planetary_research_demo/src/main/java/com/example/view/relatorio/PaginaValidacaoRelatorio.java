@@ -80,8 +80,9 @@ public class PaginaValidacaoRelatorio extends JFrame {
                     if (planetaAluno != null && planetaReal != null) {
                         RelatorioController controller = new RelatorioController();
                         String conteudoRelatorio = controller.gerarRelatorio(planetaAluno, planetaReal);
-                        controller.gerarArquivoTxt(conteudoRelatorio, "RelatorioComparacaoPlanetas.txt");
-                        JOptionPane.showMessageDialog(null, "Relatório gerado com sucesso! Confira o arquivo RelatorioComparacaoPlanetas.txt.");
+                        String nomeArquivoOutput = "Relatorio_" + planetaAluno.getNomePlaneta() + ".txt";
+                        controller.gerarArquivoTxt(conteudoRelatorio, nomeArquivoOutput);
+                        JOptionPane.showMessageDialog(null, "Relatório gerado com sucesso! Confira o arquivo Relatorio_" + nomeArquivoOutput + ".txt");
                     } else {
                         JOptionPane.showMessageDialog(null, "Erro ao obter os dados dos planetas selecionados.");
                     }
