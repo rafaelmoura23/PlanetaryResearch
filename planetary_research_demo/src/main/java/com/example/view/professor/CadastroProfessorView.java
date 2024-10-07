@@ -1,8 +1,12 @@
 package com.example.view.professor;
 
 import javax.swing.*;
+
+import com.example.controller.ProfessorController;
 import com.example.dao.ProfessorDAO;
 import com.example.model.Professor;
+
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -20,13 +24,13 @@ public class CadastroProfessorView {
     private JPasswordField senhaField;
     private JTextField linkedinField;
     private JTextField areaEstudoField;
-    private JTextField raField; // Novo campo para o RA do aluno
-    private DefaultListModel<String> raListModel; // Modelo para a lista de RAs
+    private JTextField raField; // campo para o RA do aluno
+    private DefaultListModel<String> raListModel; // Model para a lista de RAs
     private JList<String> raList; // Lista de RAs
 
     public CadastroProfessorView() {
         frame = new JFrame("Cadastro de Professor");
-        frame.setSize(400, 600);
+        frame.setSize(500, 740);
         frame.setLayout(null);
 
         JLabel nomeLabel = new JLabel("Nome:");
@@ -124,6 +128,10 @@ public class CadastroProfessorView {
         frame.add(raListScrollPane);
         frame.add(cadastrarButton);
 
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+        frame.setLocation((screenWidth - frame.getWidth()) / 2, (screenHeight - frame.getHeight()) / 2);
+
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -132,8 +140,8 @@ public class CadastroProfessorView {
             public void actionPerformed(ActionEvent e) {
                 String ra = raField.getText();
                 if (!ra.isEmpty()) {
-                    raListModel.addElement(ra); // Adiciona o RA à lista
-                    raField.setText(""); // Limpa o campo RA após a adição
+                    raListModel.addElement(ra); // Adiciona o RA a list
+                    raField.setText("");
                 } else {
                     JOptionPane.showMessageDialog(frame, "RA não pode estar vazio!");
                 }
@@ -151,7 +159,6 @@ public class CadastroProfessorView {
                 String nomeFaculdade = nomeFaculdadeField.getText();
                 String formacao = formacaoField.getText();
                 String idade = idadeField.getText();
-
                 String senha = new String(senhaField.getPassword());
                 String linkedinOuGithub = linkedinField.getText();
                 String areaEstudo = areaEstudoField.getText();
@@ -163,15 +170,15 @@ public class CadastroProfessorView {
                     alunos.add(raListModel.getElementAt(i));
                 }
 
-                // Cria o novo professor
+                // Cria o objeto professor
                 Professor novoProfessor = new Professor(nome, email, telefone, registroFaculdade,
                         nomeFaculdade, formacao, idade, senha,
                         linkedinOuGithub, areaEstudo, alunos, tipoUsuario);
 
                 // Cadastra o professor no DAO
-                ProfessorDAO professorDAO = new ProfessorDAO();
-                professorDAO.cadastrarProfessor(novoProfessor);
-                JOptionPane.showMessageDialog(frame, "Professor cadastrado com sucesso!");
+                ProfessorController professorController = new ProfessorController();
+                professorController.cadastrarProfessor(novoProfessor);
+                // JOptionPane.showMessageDialog(frame, "Professor cadastrado com sucesso!");
                 frame.dispose(); // Fecha a janela após o cadastro
             }
         });

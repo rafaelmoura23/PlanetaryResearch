@@ -1,48 +1,38 @@
 package com.example.view.aluno;
 
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import com.example.dao.PesquisaAlunoDAO;
 import com.example.model.Aluno;
 import com.example.model.PesquisaAluno;
 
-public class PesquisaCard extends JPanel {
-    public PesquisaCard(PesquisaAluno pesquisa, Aluno aluno) {
-        setLayout(new BorderLayout());
-        setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
-        setPreferredSize(new Dimension(250, 250));
+public class PesquisaPanel extends JPanel {
+    public PesquisaPanel(PesquisaAluno pesquisa, Aluno aluno) {
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // Layout vertical simples
+        setBorder(BorderFactory.createLineBorder(Color.GRAY, 1)); // Borda simples
 
+        // Labels de nome e distância
         JLabel nomeLabel = new JLabel("Nome: " + pesquisa.getNomePlaneta());
         JLabel distanciaLabel = new JLabel("Distância: " + pesquisa.getDistanciaDaTerra());
-        JLabel fotoLabel = new JLabel();
 
-        // Carregar a imagem da foto, se houver
-        if (pesquisa.getFoto() != null && !pesquisa.getFoto().isEmpty()) {
-            ImageIcon icon = new ImageIcon(pesquisa.getFoto()); // Supondo que a foto é um caminho para a imagem
-            fotoLabel.setIcon(icon);
-        }
+        add(nomeLabel);
+        add(distanciaLabel);
 
-        add(nomeLabel, BorderLayout.NORTH);
-        add(distanciaLabel, BorderLayout.CENTER);
-        add(fotoLabel, BorderLayout.SOUTH);
-
-        // Adicionar o botão de ações
         JButton actionButton = new JButton("Opções");
-        add(actionButton, BorderLayout.EAST);
+        add(actionButton);
 
+        // o botão para atualizar ou deletar
         actionButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String[] options = {"Atualizar", "Deletar"};
+                String[] options = { "Atualizar", "Deletar" };
                 int choice = JOptionPane.showOptionDialog(null, "Escolha uma ação", "Opções",
                         JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
-                if (choice == 0) { // Atualizar
+                if (choice == 0) {
                     atualizarPesquisa(pesquisa, aluno);
-                } else if (choice == 1) { // Deletar
+                } else if (choice == 1) {
                     deletarPesquisa(pesquisa, aluno);
                 }
             }
@@ -50,80 +40,78 @@ public class PesquisaCard extends JPanel {
     }
 
     private void atualizarPesquisa(PesquisaAluno pesquisa, Aluno aluno) {
-        // Criando um painel personalizado para os campos de entrada
         JPanel panel = new JPanel(new GridLayout(0, 2));
 
         JTextField idField = new JTextField(pesquisa.getId());
 
-    
         // Adicionando os campos ao painel
         panel.add(new JLabel("Nome do Planeta:"));
         JTextField nomeField = new JTextField(pesquisa.getNomePlaneta());
         panel.add(nomeField);
-    
+
         panel.add(new JLabel("Distância da Terra:"));
         JTextField distanciaField = new JTextField(String.valueOf(pesquisa.getDistanciaDaTerra()));
         panel.add(distanciaField);
-    
+
         panel.add(new JLabel("Foto URL:"));
         JTextField fotoField = new JTextField(pesquisa.getFoto());
         panel.add(fotoField);
-    
+
         panel.add(new JLabel("Diâmetro:"));
         JTextField diametroField = new JTextField(String.valueOf(pesquisa.getDiametro()));
         panel.add(diametroField);
-    
+
         panel.add(new JLabel("Massa:"));
         JTextField massaField = new JTextField(String.valueOf(pesquisa.getMassa()));
         panel.add(massaField);
-    
+
         panel.add(new JLabel("Composição Atmosférica:"));
         JTextField composicaoAtmosfericaField = new JTextField(pesquisa.getComposicaoAtmosferica());
         panel.add(composicaoAtmosfericaField);
-    
+
         panel.add(new JLabel("Temperatura Média:"));
         JTextField temperaturaMediaField = new JTextField(String.valueOf(pesquisa.getTemperaturaMedia()));
         panel.add(temperaturaMediaField);
-    
+
         panel.add(new JLabel("Número de Luas:"));
         JTextField numeroDeLuasField = new JTextField(String.valueOf(pesquisa.getNumeroDeLuas()));
         panel.add(numeroDeLuasField);
-    
+
         panel.add(new JLabel("Período Orbital:"));
         JTextField periodoOrbitalField = new JTextField(pesquisa.getPeriodoOrbital());
         panel.add(periodoOrbitalField);
-    
+
         panel.add(new JLabel("Tipo de Superfície:"));
         JTextField tipoDeSuperficieField = new JTextField(pesquisa.getTipoDeSuperficie());
         panel.add(tipoDeSuperficieField);
-    
+
         panel.add(new JLabel("Atividade Geológica:"));
         JTextField atividadeGeologicaField = new JTextField(pesquisa.getAtividadeGeologica());
         panel.add(atividadeGeologicaField);
-    
+
         panel.add(new JLabel("Possibilidade de Água:"));
         JTextField possibilidadeDeAguaField = new JTextField(pesquisa.getPossibilidadeDeAgua());
         panel.add(possibilidadeDeAguaField);
-    
+
         panel.add(new JLabel("Campo Magnético:"));
         JTextField campoMagneticoField = new JTextField(pesquisa.getCampoMagnetico());
         panel.add(campoMagneticoField);
-    
+
         panel.add(new JLabel("Radiação:"));
         JTextField radiacaoField = new JTextField(pesquisa.getRadiacao());
         panel.add(radiacaoField);
-    
+
         panel.add(new JLabel("Gravidade:"));
         JTextField gravidadeField = new JTextField(String.valueOf(pesquisa.getGravidade()));
         panel.add(gravidadeField);
-    
+
         panel.add(new JLabel("Características Especiais:"));
         JTextField caracteristicasEspeciaisField = new JTextField(pesquisa.getCaracteristicasEspeciais());
         panel.add(caracteristicasEspeciaisField);
-    
-        // Exibindo o JOptionPane com o painel
-        int result = JOptionPane.showConfirmDialog(null, panel, "Atualizar Pesquisa", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-    
+
+        int result = JOptionPane.showConfirmDialog(null, panel, "Atualizar Pesquisa", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE);
+
         if (result == JOptionPane.OK_OPTION) {
             try {
                 // Atualizando os valores do objeto pesquisa
@@ -161,10 +149,10 @@ public class PesquisaCard extends JPanel {
             }
         }
     }
-    
 
     private void deletarPesquisa(PesquisaAluno pesquisa, Aluno aluno) {
-        int confirm = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deletar essa pesquisa?", "Confirmar exclusão", JOptionPane.YES_NO_OPTION);
+        int confirm = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deletar essa pesquisa?",
+                "Confirmar exclusão", JOptionPane.YES_NO_OPTION);
 
         if (confirm == JOptionPane.YES_OPTION) {
             PesquisaAlunoDAO pesquisaAlunoDAO = new PesquisaAlunoDAO();
@@ -173,6 +161,4 @@ public class PesquisaCard extends JPanel {
             JOptionPane.showMessageDialog(null, "Pesquisa deletada com sucesso!");
         }
     }
-
-    
 }

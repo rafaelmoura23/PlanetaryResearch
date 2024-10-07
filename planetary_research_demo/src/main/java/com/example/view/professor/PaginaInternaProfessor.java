@@ -1,5 +1,6 @@
 package com.example.view.professor;
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,6 +16,10 @@ public class PaginaInternaProfessor extends JFrame {
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
+
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+        this.setLocation((screenWidth - this.getWidth()) / 2, (screenHeight - this.getHeight()) / 2);
 
 
         JLabel welcomeLabel = new JLabel("Bem-vindo, Professor " + professor.getNome() + "\n Tipo de Usuário: " + professor.getTipoUsuario());

@@ -2,10 +2,10 @@ package com.example.view;
 
 import javax.swing.*;
 
-// import com.example.dao.PesquisaAlunoDAO;
 import com.example.view.aluno.CadastroAlunoView;
 import com.example.view.professor.CadastroProfessorView;
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,6 +27,12 @@ public class MainView {
 
         frame.setSize(400, 400);
         frame.setLayout(null);
+        
+        // método para centralizar a tela independente do tamanho do monitor
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+        frame.setLocation((screenWidth - frame.getWidth()) / 2, (screenHeight - frame.getHeight()) / 2);
+        
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -48,5 +54,4 @@ public class MainView {
             }
         });
     }
-
 }

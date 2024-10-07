@@ -1,6 +1,8 @@
 package com.example.view.pesquisa;
 
 import javax.swing.*;
+
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,7 +14,7 @@ import com.example.model.Professor;
 public class PaginaCadastroPesquisaAluno extends JFrame {
     public PaginaCadastroPesquisaAluno(Aluno aluno, Professor professor) {
         setTitle("Sistema de Gerenciamento de Pesquisas");
-        setSize(800, 800);
+        setSize(840, 840);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(null);
 
@@ -148,37 +150,75 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
         caracteristicasField.setBounds(250, 660, 400, 30);
         add(caracteristicasField);
 
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+        this.setLocation((screenWidth - this.getWidth()) / 2, (screenHeight - this.getHeight()) / 2);
+
         if (aluno != null) {
             JLabel idAlunoLabel = new JLabel("ID Aluno:");
-            idAlunoLabel.setBounds(50, 690, 200, 30);
+            idAlunoLabel.setBounds(50, 700, 200, 30);
             add(idAlunoLabel);
             String idAluno = aluno.getRa();
             JTextField idAlunoField = new JTextField(idAluno);
-            idAlunoField.setBounds(250, 690, 400, 30);
+            idAlunoField.setBounds(250, 700, 400, 30);
             add(idAlunoField);
             idAlunoField.setEditable(false);
         }
+        // } else if (professor != null) {
+        //     JLabel idAlunoLabel = new JLabel("ID Aluno:");
+        //     idAlunoLabel.setBounds(50, 700, 200, 30);
+        //     add(idAlunoLabel);
+        //     String idAluno = "1";
+        //     JTextField idAlunoField = new JTextField(idAluno);
+        //     idAlunoField.setBounds(250, 700, 400, 30);
+        //     add(idAlunoField);
+        //     idAlunoField.setEditable(false);
+        // } else{
+
+        // }
+
         // Botão para salvar a pesquisa
         JButton salvarButton = new JButton("Salvar Pesquisa");
-        salvarButton.setBounds(300, 700, 200, 40);
+        salvarButton.setBounds(300, 740, 200, 40);
         add(salvarButton);
 
         salvarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try{
                 // Captura dos dados dos campos
                 String nomePlaneta = nomePlanetaField.getText();
                 String distanciaString = distanciaField.getText(); // double
+                if (distanciaString.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "A distância não pode ser vazia.");
+                    return;
+                }
                 double distancia = Double.parseDouble(distanciaString);
                 String foto = fotoField.getText();
                 String diametroString = diametroField.getText(); // double
+                if (diametroString.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O diâmetro não pode ser vazio.");
+                    return;
+                }
                 double diametro = Double.parseDouble(diametroString); // parse
                 String massaString = massaField.getText(); // double
+                if (massaString.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "A massa não pode ser vazia.");
+                    return;
+                }
                 double massa = Double.parseDouble(massaString);
                 String composicao = composicaoField.getText();
                 String temperaturaString = temperaturaField.getText(); // double
+                if (temperaturaString.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "A temperatura não pode ser vazia.");
+                    return;
+                }
                 double temperatura = Double.parseDouble(temperaturaString);
                 String numeroLuasString = numeroLuasField.getText(); // int
+                if (numeroLuasString.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O número de luas não pode ser vazia.");
+                    return;
+                }
                 int numeroLuas = Integer.parseInt(numeroLuasString);
                 String periodoOrbital = periodoOrbitalField.getText();
                 String tipoSuperficie = tipoSuperficieField.getText();
@@ -189,7 +229,7 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
                 String gravidade = gravidadeField.getText();
                 String caracteristicas = caracteristicasField.getText();
 
-                String idAluno = null;
+                String idAluno = "1";
                 if (aluno != null) {
                     idAluno = aluno.getRa();
                 }
@@ -219,7 +259,13 @@ public class PaginaCadastroPesquisaAluno extends JFrame {
                 radiacaoField.setText("");
                 gravidadeField.setText("");
                 caracteristicasField.setText("");
+            } catch(NumberFormatException fe){
+                JOptionPane.showMessageDialog(null, "O campo tem que ser númerico: " + fe.getMessage());
             }
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Erro inesperado: " + ex.getMessage());
+            } 
+        }
         });
 
         setVisible(true);

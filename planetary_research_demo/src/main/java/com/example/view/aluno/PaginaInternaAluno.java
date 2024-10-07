@@ -42,6 +42,9 @@ public class PaginaInternaAluno extends JFrame {
 
         carregarPesquisas(aluno.getRa(), pesquisaPanel);
 
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+        this.setLocation((screenWidth - this.getWidth()) / 2, (screenHeight - this.getHeight()) / 2);
         setVisible(true);
     }
 
@@ -50,7 +53,7 @@ public class PaginaInternaAluno extends JFrame {
         List<PesquisaAluno> pesquisas = pesquisaAlunoDAO.buscarPesquisasPorRA(ra);
 
         for (PesquisaAluno pesquisa : pesquisas) {
-            PesquisaCard card = new PesquisaCard(pesquisa, aluno);
+            PesquisaPanel card = new PesquisaPanel(pesquisa, aluno);
             pesquisaPanel.add(card);
         }
 

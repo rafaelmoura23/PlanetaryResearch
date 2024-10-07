@@ -1,36 +1,39 @@
 Relatório de Comparação de Planetas
 
-Planeta do Aluno: Planeta X
-Planeta Real: Planeta Urano
+Planeta do Aluno: Planeta II
+Planeta Real: 10
 
 Distância da Terra:
- - Aluno: 1.0 anos-luz
- - Real: 1.0 anos-luz
- - Similaridade: 100,00%
+ - Aluno: 234.0
+ - Real: 10.0
+ - Similaridade: 4,27%
 
 Diâmetro:
- - Aluno: 1.0
- - Real: 1.0
- - Similaridade: 100,00%
+ - Aluno: 56.0
+ - Real: 10.0
+ - Similaridade: 17,86%
 
 Massa:
- - Aluno: 1.0
- - Real: 1.0
- - Similaridade: 100,00%
+ - Aluno: 45.0
+ - Real: 1010.0
+ - Similaridade: 4,46%
 
 Temperatura Média:
- - Aluno: 1.0 °C
- - Real: 1.0 °C
- - Similaridade: 100,00%
+ - Aluno: 34.0
+ - Real: 10.0
+ - Similaridade: 29,41%
 
 Número de Luas:
- - Aluno: 11
- - Real: 1
- - Similaridade: 9,09%
+ - Aluno: 10.0
+ - Real: 10.0
+ - Similaridade: 100,00%
 
 Gravidade:
- - Aluno: 11.0
- - Real: 1.0
- - Similaridade: 9,09%
+ - Aluno: 9.8
+ - Real: 10.0
+ - Similaridade: 98,00%
 
-Nível de Proximidade Geral: 69,70%
+
+Nível de Proximidade Geral: 42,33%
+
+Feedback: O planeta do aluno possui diferenças significativas em relação a um planeta real.

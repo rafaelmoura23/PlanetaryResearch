@@ -1,6 +1,5 @@
 package com.example.dao;
 
-import com.example.model.Aluno;
 import com.example.model.PesquisaAluno;
 import com.example.model.Professor;
 import com.mongodb.MongoWriteException;
@@ -34,6 +33,17 @@ public class PesquisaAlunoDAO {
     }
 
     public void inserirPlaneta(PesquisaAluno pesquisaAluno) {
+
+        if (pesquisaAluno == null) {
+            throw new IllegalArgumentException("A pesquisa do aluno não pode ser nula.");
+        }
+        if (pesquisaAluno.getNomePlaneta() == null || pesquisaAluno.getNomePlaneta().isEmpty()) {
+            throw new IllegalArgumentException("O nome do planeta não pode ser vazio.");
+        }
+        if (pesquisaAluno.getIdAluno() == null || pesquisaAluno.getIdAluno().isEmpty()) {
+            throw new IllegalArgumentException("O ID do aluno não pode ser vazio.");
+        }
+
         MongoCollection<Document> collection = database.getCollection("pesquisaAlunos");
         Document doc = new Document("nomePlaneta", pesquisaAluno.getNomePlaneta())
                 .append("distanciaDaTerra", pesquisaAluno.getDistanciaDaTerra())
@@ -161,7 +171,7 @@ public class PesquisaAlunoDAO {
         MongoCollection<Document> collection = database.getCollection("pesquisaAlunos");
 
         FindIterable<Document> documentos = collection.find(
-                Filters.or(Filters.eq("idAluno", null), Filters.not(Filters.exists("idAluno"))));
+                Filters.or(Filters.eq("idAluno", "1"), Filters.not(Filters.exists("idAluno"))));
 
         for (Document doc : documentos) {
             PesquisaAluno pesquisa = extrairPesquisaAluno(doc);

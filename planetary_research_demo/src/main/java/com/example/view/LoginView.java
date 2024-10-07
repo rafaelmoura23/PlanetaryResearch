@@ -8,6 +8,7 @@ import com.example.model.Professor;
 import com.example.view.aluno.PaginaInternaAluno;
 import com.example.view.professor.PaginaInternaProfessor;
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -43,6 +44,10 @@ public class LoginView extends JFrame {
         loginAlunoButton = new JButton("Login Aluno");
         loginAlunoButton.setBounds(210, 150, 150, 40);
         add(loginAlunoButton);
+
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+        this.setLocation((screenWidth - this.getWidth()) / 2, (screenHeight - this.getHeight()) / 2);
 
         loginProfessorButton.addActionListener(new ActionListener() {
             @Override

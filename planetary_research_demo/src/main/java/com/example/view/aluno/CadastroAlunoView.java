@@ -2,9 +2,10 @@ package com.example.view.aluno;
 
 import javax.swing.*;
 
-import com.example.dao.AlunoDAO;
+import com.example.controller.AlunoController;
 import com.example.model.Aluno;
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,6 +23,7 @@ public class CadastroAlunoView {
     private JTextField areaPesquisaField;
 
     public CadastroAlunoView() {
+        
         frame = new JFrame("Cadastro de Aluno");
         frame.setSize(400, 500);
         frame.setLayout(null);
@@ -104,6 +106,10 @@ public class CadastroAlunoView {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+        frame.setLocation((screenWidth - frame.getWidth()) / 2, (screenHeight - frame.getHeight()) / 2);
+
         cadastrarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String nome = nomeField.getText();
@@ -118,10 +124,16 @@ public class CadastroAlunoView {
                 String areaPesquisa = areaPesquisaField.getText();
                 String tipoUsuario = "aluno";
 
+                // AlunoDAO alunoDAO = new AlunoDAO();
 
-                AlunoDAO alunoDAO = new AlunoDAO();
-                alunoDAO.cadastrarAluno(new Aluno(nome, email, telefone, ra, nomeFaculdade, senha, curso, orientador, linkedinGithub, areaPesquisa, tipoUsuario));
-                JOptionPane.showMessageDialog(frame, "Aluno cadastrado com sucesso!");
+                Aluno alunoNovo = new Aluno(nome, email, telefone, ra, nomeFaculdade, senha, curso, orientador, linkedinGithub, areaPesquisa, tipoUsuario);
+                
+                AlunoController alunoController = new AlunoController();
+                alunoController.cadastrarAlunoController(alunoNovo);
+
+                // AlunoDAO alunoDAO = new AlunoDAO();
+                // alunoDAO.cadastrarAlunoController(new Aluno(nome, email, telefone, ra, nomeFaculdade, senha, curso, orientador, linkedinGithub, areaPesquisa, tipoUsuario));
+                // JOptionPane.showMessageDialog(frame, "Aluno cadastrado com sucesso!");
                 frame.dispose(); // Fecha a janela após o cadastro
             }
         });
