@@ -54,6 +54,12 @@ O sistema oferece login e cadastro diferenciados para **Professores** e **Alunos
 
 **PlanetaryResearch** traz a exploração espacial para a sala de aula, promovendo uma experiência de aprendizado prática e interativa, onde alunos e professores podem colaborar e validar descobertas científicas.
 
+
+# Diagramas
+
+<details>
+<summary> Diagrama de Classe</summary>
+
 ``` mermaid
 
 classDiagram
@@ -130,3 +136,80 @@ classDiagram
     Planeta "1" --> "0..1" Professor : associado a >
 
 ```
+
+</details>
+
+<br>
+
+<details>
+<summary> Diagrama de Uso</summary>
+
+``` mermaid
+
+%%{ flowchart: { "nodeSpacing": 50, "edgeSpacing": 20, "curve": "linear" } }%%
+graph TD
+    A[Professor] -->|Se Cadastrar| UC1[Cadastro]
+    A -->|Fazer Login| UC2[Login]
+    A -->|Cadastrar Planeta| UC3[Cadastrar Planeta]
+    A -->|Gerar Relatório| UC4[Gerar Relatório]
+    
+    B[Aluno] -->|Se Cadastrar| UC5[Cadastro]
+    B -->|Fazer Login| UC6[Login]
+    B -->|Cadastrar Planeta| UC7[Cadastrar Planeta]
+    B -->|Atualizar Planeta| UC8[Atualizar Planeta]
+    B -->|Excluir Planeta| UC9[Excluir Planeta]
+
+
+```
+
+</details>
+
+<br>
+
+<details>
+<summary> Diagrama de Fluxo</summary>
+
+``` mermaid
+
+%%{ init: { "theme": "default" } }%%
+graph TD
+    A[Início] --> B[Se cadastrar]
+    B --> C[Fazer login]
+    C --> D{Professor ou Aluno?}
+    D --> E[Ações do Professor]
+    E --> F[– Cadastrar Planeta]
+    E --> G[– Gerar Relatório]
+    D --> H[Ações do Aluno]
+    H --> I[– Cadastrar Planeta]
+    H --> J[– Atualizar Planeta]
+    H --> K[– Excluir Planeta]
+    K --> L[Fim]
+
+
+```
+
+</details>
+
+<br>
+
+# Testes Unitários com Mockito 
+
+<details>
+  <summary> Testes Unitários</summary>
+
+  - **Relatório Controller**  
+  ![relatorioController](teste_unitarios/relatorioController.png)
+
+  - **Professor Controller**  
+  ![professorController](teste_unitarios/professorController.png)
+
+  - **Pesquisa Controller**  
+  ![pesquisaController](teste_unitarios/pesquisaController.png)
+
+  - **Login Controller**  
+  ![loginController](teste_unitarios/loginController.png)
+
+  - **Aluno Controller**  
+  ![alunoController](teste_unitarios/alunoController.png)
+
+</details>
