@@ -8,11 +8,10 @@
 O sistema oferece login e cadastro diferenciados para **Professores** e **Alunos/Pesquisadores**:
 - **Professor:**
   - Informações: Nome, Email, Telefone, Registro da Faculdade, Nome da Faculdade, Formação, Idade, Senha, Linkedin ou Github, Área de Estudo, Lista de Alunos.
-  - Controle de orientandos: Professores podem cadastrar seus alunos para associá-los às suas pesquisas.
+  - Controle de orientandos: Professores podem cadastrar seus alunos para associá-los às suas pesquisas por meio do RA dos alunos.
 
 - **Aluno/Pesquisador:**
   - Informações: Nome, Email, Telefone, RA, Nome da Faculdade, Senha, Curso, Orientador, Linkedin ou Github, Área de Pesquisa.
-  - O orientador é automaticamente associado com base nos alunos cadastrados pelo professor.
 
 ### 2. Funcionalidades para o Professor
 - **Cadastro de Planetas:** O professor pode cadastrar planetas reais com informações como:
@@ -35,7 +34,7 @@ O sistema oferece login e cadastro diferenciados para **Professores** e **Alunos
 3. **Página de Login**: Validação de credenciais (email/RA e senha) para acesso à plataforma.
 4. **Página Interna do Aluno**:
    - Visualização de Planetas em Andamento (CARDS)
-   - Cadastro de Novos Planetas por meio da API
+   - Cadastro de Novos Planetas
 5. **Página Interna do Professor**:
    - Cadastro de Planetas Reais
    - Geração de Relatório sobre as descobertas dos Alunos
@@ -49,10 +48,6 @@ O sistema oferece login e cadastro diferenciados para **Professores** e **Alunos
 ## Futuras Expansões
 - Implementação de uma **IA** para validar planetas automaticamente.
 - Função para verificar a habitabilidade de planetas cadastrados pelos alunos.
-
----
-
-**PlanetaryResearch** traz a exploração espacial para a sala de aula, promovendo uma experiência de aprendizado prática e interativa, onde alunos e professores podem colaborar e validar descobertas científicas.
 
 
 # Diagramas
