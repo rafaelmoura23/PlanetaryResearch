@@ -1,0 +1,189 @@
+[{
+  "_id": {
+    "$oid": "66fc4aad3f59535e00813c7c"
+  },
+  "nome": "Rafa",
+  "email": "rafa@gmail.com",
+  "telefone": "123",
+  "registroFaculdade": "123",
+  "nomeFaculdade": "Teste",
+  "formacao": "Teste",
+  "idade": "19",
+  "senha": "123",
+  "linkedinGithub": "Teste",
+  "areaDeEstudo": "Teste",
+  "alunos": []
+},
+{
+  "_id": {
+    "$oid": "66fc4fa75447e0408a16bf14"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "registroFaculdade": "",
+  "nomeFaculdade": "",
+  "formacao": "",
+  "idade": "",
+  "senha": "",
+  "linkedinGithub": "",
+  "areaDeEstudo": "",
+  "alunos": []
+},
+{
+  "_id": {
+    "$oid": "66feca6644f7854c11962305"
+  },
+  "nome": "dasd",
+  "email": "asd",
+  "telefone": "sad",
+  "registroFaculdade": "asd",
+  "nomeFaculdade": "dasd",
+  "formacao": "dasd",
+  "idade": "asd",
+  "senha": "asd",
+  "linkedinGithub": "dasd",
+  "areaDeEstudo": "ad",
+  "alunos": [
+    "ad",
+    "123",
+    "345"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66fecc8878b2ff03ffe50cf1"
+  },
+  "nome": "Rafa",
+  "email": "rafa@gmail.com",
+  "telefone": "123",
+  "registroFaculdade": "123",
+  "nomeFaculdade": "dsf",
+  "formacao": "dsfsdf",
+  "idade": "sfsaf",
+  "senha": "123",
+  "linkedinGithub": "afsdf",
+  "areaDeEstudo": "afsdf",
+  "alunos": [
+    "123",
+    "1234"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67002823500b5a0b9c409636"
+  },
+  "nome": "safd",
+  "email": "joao@gmail.com",
+  "telefone": "345345",
+  "registroFaculdade": "345345",
+  "nomeFaculdade": "32434",
+  "formacao": "34234",
+  "idade": "123",
+  "senha": "123",
+  "linkedinGithub": "sfsdf",
+  "areaDeEstudo": "dsfsdf",
+  "alunos": [],
+  "tipoUsuario": "professor"
+},
+{
+  "_id": {
+    "$oid": "670411f8bbfaf61f8b495419"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "registroFaculdade": "",
+  "nomeFaculdade": "",
+  "formacao": "",
+  "idade": "",
+  "senha": "",
+  "linkedinGithub": "",
+  "areaDeEstudo": "",
+  "alunos": [
+    "h",
+    "h",
+    "h",
+    "h",
+    "h",
+    "h",
+    "h",
+    "h",
+    "h"
+  ],
+  "tipoUsuario": "professor"
+},
+{
+  "_id": {
+    "$oid": "67041863194d6c1e76952109"
+  },
+  "nome": "Rafa",
+  "email": "rafa_prof@gmail.com",
+  "telefone": "123",
+  "registroFaculdade": "123",
+  "nomeFaculdade": "Teste",
+  "formacao": "Teste",
+  "idade": "12",
+  "senha": "123",
+  "linkedinGithub": "DSA",
+  "areaDeEstudo": "FSDF",
+  "alunos": [
+    "1234"
+  ],
+  "tipoUsuario": "professor"
+},
+{
+  "_id": {
+    "$oid": "67042b2eef83aa6d8387aa77"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "registroFaculdade": "",
+  "nomeFaculdade": "",
+  "formacao": "",
+  "idade": "",
+  "senha": "",
+  "linkedinGithub": "",
+  "areaDeEstudo": "",
+  "alunos": [],
+  "tipoUsuario": "professor"
+},
+{
+  "_id": {
+    "$oid": "67043027cbaec178a114eb51"
+  },
+  "nome": "Teste",
+  "email": "teste@gmail.com",
+  "telefone": "12345678910",
+  "registroFaculdade": "jdsfs",
+  "nomeFaculdade": "fsjdfh",
+  "formacao": "fsjdf",
+  "idade": "19",
+  "senha": "123456",
+  "linkedinGithub": "sjdhf",
+  "areaDeEstudo": "fkjsdhg",
+  "alunos": [
+    "fksjdf"
+  ],
+  "tipoUsuario": "professor"
+},
+{
+  "_id": {
+    "$oid": "670430687b1c6e41f121d574"
+  },
+  "nome": "Teste",
+  "email": "teste@gmail.com",
+  "telefone": "234234",
+  "registroFaculdade": "45345",
+  "nomeFaculdade": "543434534",
+  "formacao": "543",
+  "idade": "18",
+  "senha": "123456",
+  "linkedinGithub": "ghg",
+  "areaDeEstudo": "hg",
+  "alunos": [
+    "hg"
+  ],
+  "tipoUsuario": "professor"
+}]

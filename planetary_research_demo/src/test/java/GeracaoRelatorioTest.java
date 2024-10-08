@@ -18,7 +18,6 @@ public class GeracaoRelatorioTest {
     public void setUp() {
         relatorioController = new RelatorioController();
 
-        // Mock de dados para os testes
         planetaAluno = new PesquisaAluno();
         planetaAluno.setNomePlaneta("Terra");
         planetaAluno.setDistanciaDaTerra(150e6);
@@ -48,6 +47,7 @@ public class GeracaoRelatorioTest {
     }
 
     @Test
+    // utilizando assetEquals para definir o valor esperado
     public void testCalcularSimilaridadeValoresNormais() {
         double similaridade = relatorioController.calcularSimilaridade(100, 200);
         assertEquals(0.5, similaridade, 0.01);

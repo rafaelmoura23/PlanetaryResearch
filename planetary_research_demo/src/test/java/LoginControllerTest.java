@@ -34,8 +34,6 @@ public class LoginControllerTest {
 
         // Chamar o método que será testado
         Aluno resultado = loginController.loginAluno("rafa@example.com", "senha123");
-
-        // Verificar o comportamento
         assert resultado != null;
         assert resultado.getEmail().equals("rafa@example.com");
 
@@ -45,13 +43,10 @@ public class LoginControllerTest {
 
     @Test
     public void testLoginAlunoComErroDeCredenciais() {
-        // Simular retorno nulo no DAO
         when(alunoDAO.buscarAlunoPorEmailESenha("rafa@example.com", "senhaErrada")).thenReturn(null);
 
-        // Chamar o método que será testado
+        // Chamar o método
         Aluno resultado = loginController.loginAluno("rafa@example.com", "senhaErrada");
-
-        // Verificar o comportamento
         assert resultado == null;
 
         // Verificar se o método buscarAlunoPorEmailESenha foi chamado

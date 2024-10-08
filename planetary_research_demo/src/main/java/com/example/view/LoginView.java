@@ -62,8 +62,6 @@ public class LoginView extends JFrame {
                     // Redirecionar para a tela de professor
                     new PaginaInternaProfessor(professor);
                     dispose();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Email ou senha incorretos!");
                 }
             }
         });
@@ -81,9 +79,7 @@ public class LoginView extends JFrame {
                     // Redirecionar para a tela de aluno
                     new PaginaInternaAluno(aluno);
                     
-                } else {
-                    JOptionPane.showMessageDialog(null, "Email ou senha incorretos!");
-                }
+                } 
             }
         });
 

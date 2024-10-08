@@ -1,7 +1,6 @@
 import com.example.dao.PesquisaAlunoDAO;
 import com.example.model.PesquisaAluno;
 import com.example.controller.PesquisaAlunoController;
-import com.mongodb.MongoWriteException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

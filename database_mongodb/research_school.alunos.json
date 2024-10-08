@@ -1,0 +1,187 @@
+[{
+  "_id": {
+    "$oid": "66fc4d4b7b40a97348ae383b"
+  },
+  "nome": "João Paulo",
+  "email": "joao_paulo@gmail.com",
+  "telefone": "123",
+  "ra": "123",
+  "nomeFaculdade": "Teste",
+  "senha": "123",
+  "curso": "Teste",
+  "orientador": "Teste",
+  "linkedinGithub": "Teste",
+  "areaDePesquisa": "Teste"
+},
+{
+  "_id": {
+    "$oid": "66fc4f9d5447e0408a16bf13"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "ra": "",
+  "nomeFaculdade": "",
+  "senha": "",
+  "curso": "",
+  "orientador": "",
+  "linkedinGithub": "",
+  "areaDePesquisa": ""
+},
+{
+  "_id": {
+    "$oid": "66fecad044f7854c11962306"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "ra": "123",
+  "nomeFaculdade": "",
+  "senha": "",
+  "curso": "",
+  "orientador": "",
+  "linkedinGithub": "",
+  "areaDePesquisa": ""
+},
+{
+  "_id": {
+    "$oid": "66fecc5e78b2ff03ffe50cf0"
+  },
+  "nome": "Rafa",
+  "email": "rafa@gmail.com",
+  "telefone": "123",
+  "ra": "1234",
+  "nomeFaculdade": "sdf",
+  "senha": "1234",
+  "curso": "sad",
+  "orientador": "Paulao",
+  "linkedinGithub": "23sad",
+  "areaDePesquisa": "sadasd"
+},
+{
+  "_id": {
+    "$oid": "66fef6a4c7609c20d26d3de2"
+  },
+  "nome": "rafa",
+  "email": "rafael@gmail.com",
+  "telefone": "fsdf",
+  "ra": "dfs",
+  "nomeFaculdade": "fsdf",
+  "senha": "123",
+  "curso": "dfsd",
+  "orientador": "fsdf",
+  "linkedinGithub": "dfsd",
+  "areaDePesquisa": "fsdf"
+},
+{
+  "_id": {
+    "$oid": "670028eb323f662d4c4c0626"
+  },
+  "nome": "João de Barros",
+  "email": "joao@gmail.com",
+  "telefone": "234234",
+  "ra": "2342",
+  "nomeFaculdade": "4234jhk",
+  "senha": "123",
+  "curso": "g",
+  "orientador": "g",
+  "linkedinGithub": "g",
+  "areaDePesquisa": "g",
+  "tipoUsuario": "aluno"
+},
+{
+  "_id": {
+    "$oid": "67002bb1bf2be138197662ec"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "ra": "",
+  "nomeFaculdade": "",
+  "senha": "",
+  "curso": "",
+  "orientador": "",
+  "linkedinGithub": "",
+  "areaDePesquisa": "",
+  "tipoUsuario": "aluno"
+},
+{
+  "_id": {
+    "$oid": "67002bb4bf2be138197662ed"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "ra": "",
+  "nomeFaculdade": "",
+  "senha": "",
+  "curso": "",
+  "orientador": "",
+  "linkedinGithub": "",
+  "areaDePesquisa": "",
+  "tipoUsuario": "aluno"
+},
+{
+  "_id": {
+    "$oid": "67041892194d6c1e7695210a"
+  },
+  "nome": "Rafael",
+  "email": "rafa_al@gmail.com",
+  "telefone": "123",
+  "ra": "1234",
+  "nomeFaculdade": "sdf",
+  "senha": "123",
+  "curso": "dsf",
+  "orientador": "fsd",
+  "linkedinGithub": "fsd",
+  "areaDePesquisa": "fds",
+  "tipoUsuario": "aluno"
+},
+{
+  "_id": {
+    "$oid": "67042b1de4cbb4660b4f2eb0"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "ra": "",
+  "nomeFaculdade": "",
+  "senha": "",
+  "curso": "",
+  "orientador": "",
+  "linkedinGithub": "",
+  "areaDePesquisa": "",
+  "tipoUsuario": "aluno"
+},
+{
+  "_id": {
+    "$oid": "67042b2bef83aa6d8387aa76"
+  },
+  "nome": "",
+  "email": "",
+  "telefone": "",
+  "ra": "",
+  "nomeFaculdade": "",
+  "senha": "",
+  "curso": "",
+  "orientador": "",
+  "linkedinGithub": "",
+  "areaDePesquisa": "",
+  "tipoUsuario": "aluno"
+},
+{
+  "_id": {
+    "$oid": "67042ddc543a797e6185d8f2"
+  },
+  "nome": "Rafael",
+  "email": "rafael@gmail.com",
+  "telefone": "123456789",
+  "ra": "123",
+  "nomeFaculdade": "teste",
+  "senha": "123456",
+  "curso": "dgg",
+  "orientador": "fsdf",
+  "linkedinGithub": "fsdf",
+  "areaDePesquisa": "fdfs",
+  "tipoUsuario": "aluno"
+}]

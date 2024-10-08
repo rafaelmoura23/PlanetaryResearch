@@ -1,0 +1,39 @@
+Relatório de Comparação de Planetas
+
+Planeta do Aluno: Planeta X10
+Planeta Real: 10
+
+Distância da Terra:
+ - Aluno: 10.0
+ - Real: 10.0
+ - Similaridade: 100,00%
+
+Diâmetro:
+ - Aluno: 10.0
+ - Real: 10.0
+ - Similaridade: 100,00%
+
+Massa:
+ - Aluno: 10.0
+ - Real: 1010.0
+ - Similaridade: 0,99%
+
+Temperatura Média:
+ - Aluno: 10.0
+ - Real: 10.0
+ - Similaridade: 100,00%
+
+Número de Luas:
+ - Aluno: 10.0
+ - Real: 10.0
+ - Similaridade: 100,00%
+
+Gravidade:
+ - Aluno: 10.0
+ - Real: 10.0
+ - Similaridade: 100,00%
+
+
+Nível de Proximidade Geral: 83,50%
+
+Feedback: O planeta do aluno tem várias características semelhantes a um planeta real.

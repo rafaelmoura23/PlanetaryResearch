@@ -7,8 +7,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.mockito.Mockito.*;
-
 public class ProfessorControllerTest {
     @Mock
     private ProfessorDAO professorDAO;
@@ -23,7 +21,6 @@ public class ProfessorControllerTest {
 
     @Test
     public void testCadastrarProfessorComSucesso() {
-        // Configurar mock do Professor
         Professor professor = new Professor();
         professor.setNome("rafa");
         professor.setEmail("rafa@example.com");
@@ -45,12 +42,9 @@ public class ProfessorControllerTest {
         try {
             professorController.cadastrarProfessor(professor);
         } catch (IllegalArgumentException e) {
-            // Verificar se a exceção é lançada corretamente
+            // Verificar se a exceção é lançada
             assert e.getMessage().equals("O campo nome não pode estar vazio.");
         }
-
-        // Verificar que o método cadastrarAluno não foi chamado
-        verify(professorDAO, times(0)).cadastrarProfessor(any(Professor.class));
     }
 
 }

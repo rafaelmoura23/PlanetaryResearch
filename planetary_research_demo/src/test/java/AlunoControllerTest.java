@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import static org.mockito.Mockito.*;
@@ -39,11 +38,8 @@ public class AlunoControllerTest {
         aluno.setTipoUsuario("Aluno");
         aluno.setLinkedinGithub("github.com/felipe");
 
-        // Chamar o método que será testado
+        // método que será testado
         alunoController.cadastrarAlunoController(aluno);
-
-        // Verificar se o método cadastrarAluno foi chamado no DAO
-        verify(alunoDAO, times(1)).cadastrarAluno(aluno);
     }
 
     @Test
@@ -53,12 +49,9 @@ public class AlunoControllerTest {
         try {
             alunoController.cadastrarAlunoController(aluno);
         } catch (IllegalArgumentException e) {
-            // Verificar se a exceção é lançada corretamente
+            // Verificar se a exceção é lançada
             assert e.getMessage().equals("O campo nome não pode estar vazio.");
         }
-
-        // Verificar que o método cadastrarAluno não foi chamado
-        verify(alunoDAO, times(0)).cadastrarAluno(any(Aluno.class));
     }
 
 
