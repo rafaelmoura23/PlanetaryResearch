@@ -134,7 +134,6 @@ classDiagram
 
 </details>
 
-<br>
 
 <details>
 <summary> Diagrama de Uso</summary>
@@ -159,7 +158,6 @@ graph TD
 
 </details>
 
-<br>
 
 <details>
 <summary> Diagrama de Fluxo</summary>
@@ -185,8 +183,6 @@ graph TD
 
 </details>
 
-<br>
-
 # Testes Unitários com Mockito 
 
 <details>
@@ -208,8 +204,6 @@ graph TD
   ![alunoController](teste_unitarios/alunoController.png)
 
 </details>
-
-<br>
 
 # Manual do Usuário
 
