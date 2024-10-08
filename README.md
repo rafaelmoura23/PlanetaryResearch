@@ -254,15 +254,4 @@ graph TD
    - **Professores**: Pode cadastrar planetas existentes com base nos campos existentes para cadastro, após o cadastro do planeta ele aparecerá na tela de relatório como uma opção para a comparação do relatório.
    - **Alunos**: Podem Cadastrar, Visualizar, Editar e Deletar planetas. Após o envio do planeta ele irá aparecer para o professor na página de realatório, para posteriormente ser gerado um relatório.
 5. **Geração de Relatórios**: O acesso é apenas para o Professor. Nessa tela aparecerá duas opções para selecionar, um campo com os planetas reais cadastrados pelo professor, e um campo com os planetas cadastrados pelos alunos. Ao selecionar dois dentres esses planetas e clicar em gerar relatório, um arquivo txt será gerado com o nome do planeta do aluno(os nomes dos planetas são únicos). No relatório será apresentado perspectivas de comparação entre os dois planetas e um nível de similaridade será apresentado.
-
-## Contato
-Para suporte adicional, entre em contato com a equipe de suporte.
-
----
-
-Agradecemos por utilizar o sistema de cadastro de planetas!
-
-
-
-
 </details>
